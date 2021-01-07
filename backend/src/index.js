@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express(); //instanciando a aplicação
 
-app.use( conrs() ); //ferramenta de segurança para determinar quem pode acessar ou não
+app.use( cors() ); //ferramenta de segurança para determinar quem pode acessar ou não
 
 app.use(express.json());
 
