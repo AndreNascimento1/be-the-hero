@@ -5,6 +5,7 @@ const connection = require('../../src/database/conexion');
 describe("ONG", () => {
 
     beforeEach( async ()  => {
+        await connection.migrate.rollback();
         await connection.migrate.latest();
      });
 
@@ -14,7 +15,7 @@ describe("ONG", () => {
 
     it('should be able to create a new ONG', async () => {
         const response = await request(app)
-        .post('/ongs')
+        .post('/ongs') 
         .send({
             name: "APAD",
             email: "contato@contato.com",
